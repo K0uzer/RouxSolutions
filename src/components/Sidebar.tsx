@@ -10,21 +10,19 @@ import styles from './Sidebar.module.css'
 getDataFromServer()
 const Sidebar = () => {
     return (
-        <section>
+        <section className={styles.sidebar}>
             <h2>Сортировка</h2>
-            <div>
+            <div className={styles.buttonWrapper}>
                 <Button
                     action={() => getSortedContent(TYPES_SORT_CONTENT.COMPANY)}
                     styles={styles.button}
-                >
-                    По городу
-                </Button>
+                    text="По городу"
+                />
                 <Button
                     action={() => getSortedContent(TYPES_SORT_CONTENT.CITY)}
                     styles={styles.button}
-                >
-                    По компании
-                </Button>
+                    text="По компании"
+                />
             </div>
         </section>
     )

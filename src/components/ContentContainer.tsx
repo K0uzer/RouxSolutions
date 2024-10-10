@@ -2,10 +2,11 @@ import React from 'react'
 
 import CardList from './Card/CardList'
 
+import styles from './ContentContainer.module.css'
+
 const ContentContainer = () => {
     return (
-        <main>
-            <h1>Список пользователей</h1>
+        <main className={styles.main}>
             <CardList />
         </main>
     )

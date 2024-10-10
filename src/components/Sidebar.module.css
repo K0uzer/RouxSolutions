@@ -1,0 +1,27 @@
+.sidebar {
+    padding: 5%;
+    background: rgba(189, 189, 189, 1);
+    user-select: none;
+}
+
+.button {
+    font-size: 18px;
+    font-weight: 400;
+    width: auto;
+    height: 25px;
+    margin-top: 20px;
+    background-color: rgba(75, 81, 239, 1);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:active {
+        background-color: rgb(43, 50, 228);
+        transition: 0.3s;
+    }
+}
+
+.buttonWrapper {
+    display: flex;
+    flex-direction: column;
+}
