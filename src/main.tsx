@@ -4,9 +4,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import RootLayout from './components/layout/RootLayout.tsx'
 
-import './index.css'
 import CardList from './components/Card/CardList.tsx'
 import Form from './components/Profile/Form.tsx'
+
+import './index.css'
 
 const router = createBrowserRouter([
     {

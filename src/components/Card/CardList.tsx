@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import getDataFromServer from '../../api'
 import { dataFromLocalStorage } from '../../functions'
@@ -7,25 +7,33 @@ import styles from './CardList.module.css'
 import Card from './Card'
 
 const CardList = () => {
-    const [state, setContent] = useState(dataFromLocalStorage)
-    const countUsers = dataFromLocalStorage.length
+    const [content, setContent] = useState([])
 
-    useLayoutEffect(() => {
-        if (!state.length) {
-            setContent(getDataFromServer)
-        }
-    }, [state])
+    useEffect(
+        () =>
+            setContent(
+                dataFromLocalStorage?.length
+                    ? dataFromLocalStorage
+                    : getDataFromServer,
+            ),
+        [],
+    )
+    console.log(content)
 
     return (
         <>
             <h1 className={styles.preview}>Список пользователей</h1>
             <ul className={styles.list}>
-                {state.map((item, index) => (
-                    <Card key={index} content={item} />
-                ))}
+                {content.length ? (
+                    content.map((item, index) => (
+                        <Card key={index} content={item} />
+                    ))
+                ) : (
+                    <p>Список найденных пользователей пуст</p>
+                )}
             </ul>
             <p className={styles.countUsers}>
-                Найдено {countUsers} пользователей
+                Найдено {content.length} пользователей
             </p>
         </>
     )

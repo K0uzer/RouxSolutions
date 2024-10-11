@@ -2,6 +2,9 @@ import React from 'react'
 
 import Button from '../UI/Button'
 
+import { dataFromLocalStorage } from '../functions'
+import { TYPES_SORT_CONTENT } from '../constants'
+
 import styles from './Sidebar.module.css'
 
 const Sidebar = () => {
@@ -10,12 +13,22 @@ const Sidebar = () => {
             <h2>Сортировка</h2>
             <div className={styles.buttonWrapper}>
                 <Button
-                    action={() => {}}
+                    action={() =>
+                        getSortedContent(
+                            TYPES_SORT_CONTENT.CITY,
+                            dataFromLocalStorage,
+                        )
+                    }
                     styles={styles.button}
                     text="По городу"
                 />
                 <Button
-                    action={() => {}}
+                    action={() =>
+                        getSortedContent(
+                            TYPES_SORT_CONTENT.COMPANY,
+                            dataFromLocalStorage,
+                        )
+                    }
                     styles={styles.button}
                     text="По компании"
                 />

@@ -2,8 +2,8 @@ import { DataFromServerTypes } from '../types'
 
 import { LOCAL_STORAGE_KEYS, URL_SERVER } from '../constants'
 
-const getDataFromServer = async () => {
-    await fetch(URL_SERVER)
+const getDataFromServer = () => {
+    fetch(URL_SERVER)
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`)
