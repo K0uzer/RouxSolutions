@@ -1,12 +1,13 @@
 import React from 'react'
 
 type ButtonProps = {
+    type?: string
     text: string
     styles?: string
-    action?: () => {}
+    action?: () => void
 }
 
-const Button = ({ text = '', styles = '', action }: ButtonProps) => {
+const Button = ({ type, text = '', styles = '', action }: ButtonProps) => {
     return (
         <button className={styles} onClick={action}>
             {text}

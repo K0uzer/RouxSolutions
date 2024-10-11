@@ -1,25 +1,25 @@
 import React from 'react'
 
 import Button from '../UI/Button'
-import { getSortedContent } from '../functions'
 import { TYPES_SORT_CONTENT } from '../constants'
 import getDataFromServer from '../api'
 
+import { addData, removeData, updateData } from '../slices/contentSlice'
+
 import styles from './Sidebar.module.css'
 
-getDataFromServer()
 const Sidebar = () => {
     return (
         <section className={styles.sidebar}>
             <h2>Сортировка</h2>
             <div className={styles.buttonWrapper}>
                 <Button
-                    action={() => getSortedContent(TYPES_SORT_CONTENT.COMPANY)}
+                    action={() => {}}
                     styles={styles.button}
                     text="По городу"
                 />
                 <Button
-                    action={() => getSortedContent(TYPES_SORT_CONTENT.CITY)}
+                    action={() => {}}
                     styles={styles.button}
                     text="По компании"
                 />

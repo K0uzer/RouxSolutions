@@ -11,8 +11,8 @@ import './App.css'
 function App() {
     return (
         <div className="wrapper">
-            <Sidebar />
             <Provider store={store}>
+                <Sidebar />
                 <ContentContainer />
             </Provider>
         </div>
