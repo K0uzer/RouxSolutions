@@ -8,5 +8,9 @@
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    width: 90vw;
+    width: 95vw;
+}
+
+.main {
+    text-align: center;
 }

@@ -3,49 +3,6 @@
     user-select: none;
 }
 
-.listItem {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 20px;
-    background-color: rgba(243, 243, 243, 1);
-    border-radius: 8px;
-}
-
-.text {
-    font-size: 20px;
-    font-weight: 400;
-    padding-right: 10px;
-}
-
-.textContainer {
-    display: flex;
-    margin: 15px;
-    &::nth-child(2n) {
-        font-weight: 500;
-    }
-}
-
-.button {
-    font-size: 24px;
-    font-weight: 400;
-    position: absolute;
-    right: 15%;
-    bottom: 10%;
-    border: rgba(255, 255, 255, 0);
-    color: rgba(75, 81, 239, 1);
-    background: none;
-    cursor: pointer;
-    transition: 0.2s ease-out;
-    &:hover {
-        transition: 0.2s ease-in;
-        background-color: rgba(75, 81, 239, 1);
-        color: white;
-        border-radius: 5%;
-    }
-}
-
 .countUsers {
     font-size: 18px;
     font-weight: 500;

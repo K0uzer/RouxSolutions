@@ -4,7 +4,7 @@ import { TYPES_SORT_CONTENT } from './../constants/index'
 
 const initialState = {}
 
-const counterSlice = createSlice({
+const contentSlice = createSlice({
     name: 'content',
     initialState,
 
@@ -17,6 +17,6 @@ const counterSlice = createSlice({
 })
 
 export const { addData, updateData, removeData, sortData } =
-    counterSlice.actions
+    contentSlice.actions
 
-export default counterSlice.reducer
+export default contentSlice.reducer

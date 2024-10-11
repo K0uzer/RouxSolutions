@@ -4,10 +4,10 @@ type ButtonProps = {
     type?: string
     text: string
     styles?: string
-    action?: () => void
+    action?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const Button = ({ type, text = '', styles = '', action }: ButtonProps) => {
+const Button = ({ type = '', text = '', styles = '', action }: ButtonProps) => {
     return (
         <button className={styles} onClick={action}>
             {text}
