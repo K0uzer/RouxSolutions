@@ -1,22 +1,22 @@
+import { Action } from './../../node_modules/@remix-run/router/history'
 import { createSlice } from '@reduxjs/toolkit'
 
-import { TYPES_SORT_CONTENT } from './../constants/index'
-
-const initialState = {}
+import { LOCAL_STORAGE_KEYS } from './../constants/index'
+import { dataFromLocalStorage } from '../functions'
 
 const contentSlice = createSlice({
     name: 'content',
-    initialState,
+    initialState: {
+        data: [],
+    },
 
     reducers: {
-        addData: (state) => {},
-        updateData: (state) => {},
-        removeData: (state) => {},
-        sortData: (state, TYPES_SORT_CONTENT) => {},
+        loadData: (state, action) => {
+            state.data = action.payload
+        },
     },
 })
 
-export const { addData, updateData, removeData, sortData } =
-    contentSlice.actions
+export const { loadData } = contentSlice.actions
 
 export default contentSlice.reducer

@@ -2,7 +2,7 @@ import React from 'react'
 
 import Button from '../UI/Button'
 
-import { dataFromLocalStorage } from '../functions'
+import { dataFromLocalStorage, getSortedContent } from '../functions'
 import { TYPES_SORT_CONTENT } from '../constants'
 
 import styles from './Sidebar.module.css'

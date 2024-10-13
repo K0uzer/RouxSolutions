@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { DataFromServerTypes } from '../../types'
 
 import styles from './Card.module.css'
+import { dataFromLocalStorage } from '../../functions'
 
 type CardProps = {
     content: DataFromServerTypes
@@ -24,7 +25,7 @@ const Card = ({ content }: CardProps) => {
                 <p className={styles.text}>Компания: </p>
                 <p className={styles.text}>{content.company.name}</p>
             </div>
-            <Link to="/profile" className={styles.button}>
+            <Link to="/profile" className={styles.button} onClick={() => {}}>
                 Подробнее
             </Link>
         </li>
