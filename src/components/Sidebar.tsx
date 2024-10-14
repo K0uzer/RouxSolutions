@@ -19,10 +19,10 @@ const Sidebar: React.FC = () => {
 
     const getSortedContent = (type: string, data: DataFromServerTypes[]) => {
         loadSortedContentInLocalStorage(type, data)
+
         const sortedData = dataFromLocalStorage(LOCAL_STORAGE_KEYS.SORT_CONTENT)
-        if (sortedData) {
-            dispatch(changeContent(sortedData))
-        }
+
+        dispatch(changeContent(sortedData))
     }
 
     return (

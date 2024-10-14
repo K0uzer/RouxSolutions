@@ -13,7 +13,7 @@ export const loadSortedContentInLocalStorage = (
         a.address.city.localeCompare(b.address.city),
     )
     const sortContentOfCompany = data.sort((a, b) =>
-        a.email.localeCompare(b.email),
+        a.company.name.localeCompare(b.company.name),
     )
     switch (typeSort) {
         case 'По городу':
