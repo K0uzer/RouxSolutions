@@ -1,0 +1,9 @@
+.list {
+    margin: 20px;
+    list-style-type: none;
+}
+
+.countUsers {
+    font-size: 18px;
+    font-weight: 500;
+}

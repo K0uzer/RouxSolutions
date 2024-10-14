@@ -1,0 +1,46 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.input,
+.textarea {
+    margin: 10px 20px 0 20px;
+    background-color: white;
+    border: 1px solid #d8d8d8;
+}
+
+.input {
+    width: 50vw;
+    color: black;
+}
+
+.textarea {
+    width: 80vw;
+    height: 150px;
+}
+
+.button {
+    font-size: 15px;
+    font-weight: 400;
+    width: auto;
+    height: 25px;
+    margin: 20px;
+    background-color: rgba(75, 81, 239, 1);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:active {
+        background-color: rgb(43, 50, 228);
+        transition: 0.3s;
+    }
+}
+
+.button:first-child {
+    position: absolute;
+    right: 0;
+    top: 10%;
+}
