@@ -56,9 +56,9 @@ const Form = () => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+        console.log('Данные улетели!', content)
         setIsEdit(true)
         dispatch(changeItemData(INITIAL_ITEM_DATA))
-        console.log('Данные улетели!', content)
         navigate('/')
     }
 

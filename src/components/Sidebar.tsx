@@ -9,9 +9,9 @@ import {
 } from '../functions'
 import { changeContent } from '../slices/contentSlice'
 import { AppDispatch, RootState } from '../store'
+import { DataFromServerTypes } from '../types'
 
 import styles from './Sidebar.module.css'
-import { DataFromServerTypes } from '../types'
 
 const Sidebar: React.FC = () => {
     const dispatch = useDispatch<AppDispatch>()
