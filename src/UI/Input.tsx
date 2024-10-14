@@ -6,6 +6,7 @@ type InputProps = {
     placeholder?: string
     type: string
     disabled: boolean
+    onChange: React.ChangeEvent<HTMLInputElement>
     required: boolean
 }
 
@@ -15,6 +16,7 @@ const Input = ({
     placeholder,
     type,
     disabled = true,
+    onChange,
     required = true,
 }: InputProps) => {
     return (
@@ -23,6 +25,7 @@ const Input = ({
             className={className}
             placeholder={placeholder}
             type={type}
+            onChange={() => {}}
             disabled={disabled}
             required={required}
         ></input>
