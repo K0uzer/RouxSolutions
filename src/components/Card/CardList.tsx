@@ -15,7 +15,7 @@ const CardList: React.FC = () => {
     const dispatch = useDispatch<AppDispatch>()
     const content = useSelector((state: RootState) => state.content.data)
     const status = useSelector((state: RootState) => state.content.status)
-    const contentSorted = dataFromLocalStorage(LOCAL_STORAGE_KEYS.CONTENT)
+    const contentSorted = dataFromLocalStorage(LOCAL_STORAGE_KEYS.SORT_CONTENT)
 
     const displayedContent = contentSorted ?? content
 

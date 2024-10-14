@@ -7,7 +7,7 @@ import {
     dataFromLocalStorage,
     loadSortedContentInLocalStorage,
 } from '../functions'
-import { changeContent } from '../slices/contentSlice'
+import { sortContent } from '../slices/contentSlice'
 import { AppDispatch, RootState } from '../store'
 import { DataFromServerTypes } from '../types'
 
@@ -22,7 +22,7 @@ const Sidebar: React.FC = () => {
 
         const sortedData = dataFromLocalStorage(LOCAL_STORAGE_KEYS.SORT_CONTENT)
 
-        dispatch(changeContent(sortedData))
+        dispatch(sortContent(sortedData))
     }
 
     return (

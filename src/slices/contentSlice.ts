@@ -31,7 +31,7 @@ const contentSlice = createSlice({
     name: 'content',
     initialState,
     reducers: {
-        changeContent: (builder, action) => {
+        sortContent: (builder, action) => {
             builder.data = action.payload
         },
         changeItemData: (builder, action) => {
@@ -66,6 +66,6 @@ const contentSlice = createSlice({
     },
 })
 
-export const { changeContent, changeItemData } = contentSlice.actions
+export const { sortContent, changeItemData } = contentSlice.actions
 
 export default contentSlice.reducer
