@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { DataFromServerTypes } from '../../types'
 
 import styles from './Card.module.css'
-import { dataFromLocalStorage } from '../../functions'
 
 type CardProps = {
     content: DataFromServerTypes

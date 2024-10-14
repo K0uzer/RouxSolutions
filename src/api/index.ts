@@ -1,9 +1,8 @@
 import { DataFromServerTypes } from '../types'
+import { URL_SERVER } from '../constants'
 
-import { LOCAL_STORAGE_KEYS, URL_SERVER } from '../constants'
-
-const getDataFromServer = async () => {
-    await fetch(URL_SERVER)
+export const getDataFromServer = async () => {
+    const data = await fetch(URL_SERVER)
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`)
@@ -30,12 +29,5 @@ const getDataFromServer = async () => {
             })
             return result
         })
-    // .then((data) => {
-    //     localStorage.setItem(
-    //         LOCAL_STORAGE_KEYS.CONTENT,
-    //         JSON.stringify(data),
-    //     )
-    // })
+    return data
 }
-
-export default getDataFromServer

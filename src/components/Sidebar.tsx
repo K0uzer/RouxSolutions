@@ -13,22 +13,12 @@ const Sidebar = () => {
             <h2>Сортировка</h2>
             <div className={styles.buttonWrapper}>
                 <Button
-                    action={() =>
-                        getSortedContent(
-                            TYPES_SORT_CONTENT.CITY,
-                            dataFromLocalStorage,
-                        )
-                    }
+                    action={() => {}}
                     styles={styles.button}
                     text="По городу"
                 />
                 <Button
-                    action={() =>
-                        getSortedContent(
-                            TYPES_SORT_CONTENT.COMPANY,
-                            dataFromLocalStorage,
-                        )
-                    }
+                    action={() => {}}
                     styles={styles.button}
                     text="По компании"
                 />
