@@ -3,25 +3,24 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import Card from './Card'
 import { fetchData } from '../../slices/contentSlice'
+import { LOCAL_STORAGE_KEYS } from '../../constants'
+import { dataFromLocalStorage } from '../../functions'
 
+import { AppDispatch, RootState } from '../../store'
 import { DataFromServerTypes } from '../../types'
-import { RootState } from '../../store'
 
 import styles from './CardList.module.css'
 
 const CardList: React.FC = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch<AppDispatch>()
     const content = useSelector((state: RootState) => state.content.data)
     const status = useSelector((state: RootState) => state.content.status)
+    const contentSorted = dataFromLocalStorage(LOCAL_STORAGE_KEYS.CONTENT)
+
+    const displayedContent = contentSorted ?? content
 
     useEffect(() => {
-        dispatch(fetchData()).then((action: any) => {
-            if (fetchData.fulfilled.match(action)) {
-                console.log('Данные успешно загружены:', action.payload)
-            } else {
-                console.error('Ошибка загрузки данных:', action.error.message)
-            }
-        })
+        dispatch(fetchData())
     }, [dispatch])
 
     return (
@@ -32,8 +31,8 @@ const CardList: React.FC = () => {
             ) : (
                 <>
                     <ul className={styles.list}>
-                        {content.length ? (
-                            content.map(
+                        {displayedContent.length ? (
+                            displayedContent.map(
                                 (
                                     item: DataFromServerTypes,
                                     index: React.Key,

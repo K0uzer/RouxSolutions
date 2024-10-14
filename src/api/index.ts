@@ -1,5 +1,5 @@
 import { DataFromServerTypes } from '../types'
-import { URL_SERVER } from '../constants'
+import { LOCAL_STORAGE_KEYS, URL_SERVER } from '../constants'
 
 export const getDataFromServer = async () => {
     const data = await fetch(URL_SERVER)
@@ -9,8 +9,8 @@ export const getDataFromServer = async () => {
             }
             return response.json()
         })
-        .then((data: DataFromServerTypes[]) => {
-            const result = data.map((item) => {
+        .then((data: DataFromServerTypes[]) =>
+            data.map((item) => {
                 return {
                     address: {
                         city: item.address.city,
@@ -26,8 +26,14 @@ export const getDataFromServer = async () => {
                     phone: item.phone,
                     website: item.website,
                 }
-            })
-            return result
+            }),
+        )
+        .then((data) => {
+            localStorage.setItem(
+                LOCAL_STORAGE_KEYS.CONTENT,
+                JSON.stringify(data),
+            )
+            return data
         })
     return data
 }

@@ -1,17 +1,20 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import { getDataFromServer } from '../api'
+import { INITIAL_ITEM_DATA } from '../constants'
 
 import { DataFromServerTypes } from '../types'
 
 interface ContentState {
     data: DataFromServerTypes[]
+    itemData: DataFromServerTypes
     status: 'idle' | 'loading' | 'succeeded' | 'failed'
     error: string | null
 }
 
 const initialState: ContentState = {
     data: [],
+    itemData: INITIAL_ITEM_DATA,
     status: 'idle',
     error: null,
 }
@@ -27,7 +30,14 @@ export const fetchData = createAsyncThunk<DataFromServerTypes[]>(
 const contentSlice = createSlice({
     name: 'content',
     initialState,
-    reducers: {},
+    reducers: {
+        changeContent: (builder, action) => {
+            builder.data = action.payload
+        },
+        changeItemData: (builder, action) => {
+            builder.itemData = action.payload
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchData.pending, (state: { status: string }) => {
@@ -55,5 +65,7 @@ const contentSlice = createSlice({
             )
     },
 })
+
+export const { changeContent, changeItemData } = contentSlice.actions
 
 export default contentSlice.reducer

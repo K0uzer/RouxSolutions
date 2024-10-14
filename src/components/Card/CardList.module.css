@@ -1,4 +1,5 @@
 .list {
+    margin: 20px;
     list-style-type: none;
     user-select: none;
 }
