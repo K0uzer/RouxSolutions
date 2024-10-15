@@ -22,7 +22,8 @@
 ### Стек:
 
 1. React 
-2. Router 3. TS
+2. Router
+3. TS
 4. CSS
 5. RTK
 6. eslint
